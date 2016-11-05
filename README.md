@@ -11,7 +11,7 @@ An iOS messenger app which use Firebase to synchronize real time data without wr
 
 ## Usage
 
-Use both simulator and real device for better testing
+  Use both simulator and real device for better testing
 
 ## Contributing
 
