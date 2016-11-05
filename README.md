@@ -1,6 +1,6 @@
 # ChatChat
 
-An iOS messenger app which use Firebase to synchronize real time data without writing a line of server code and JSQMessagesViewController which gives you a messaging UI that’s on par with the native Messages app. Written in Swift with ❤
+An iOS messenger app which use Firebase to synchronize real time data without writing a line of server code and JSQMessagesViewController which gives you a messaging UI that’s on par with the native Messages app. Just login anonymously, create a channel and start chatting! Written in Swift with ❤
 
 ## Installation
 
