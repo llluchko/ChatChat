@@ -87,7 +87,6 @@ final class ChatViewController: JSQMessagesViewController {
 		return cell
 	}
   
-  
 	// MARK: Firebase related methods
 	override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
 		let itemRef = messageRef.childByAutoId()
@@ -139,7 +138,6 @@ final class ChatViewController: JSQMessagesViewController {
 		}
 	}
 
-
 	// MARK: UI and User Interaction
 	private func setupOutgoingBubble() -> JSQMessagesBubbleImage {
 		let bubbleImageFactory = JSQMessagesBubbleImageFactory()
@@ -157,7 +155,6 @@ final class ChatViewController: JSQMessagesViewController {
 			messages.append(message)
 		}
 	}
-
 
 	// MARK: UITextViewDelegate methods
 	override func textViewDidChange(_ textView: UITextView) {

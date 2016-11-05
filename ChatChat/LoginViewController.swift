@@ -28,16 +28,16 @@ class LoginViewController: UIViewController {
 	}
 
 	@IBAction func loginDidTouch(_ sender: AnyObject) {
-	if nameField?.text != "" {
-		FIRAuth.auth()?.signInAnonymously(completion: { (user, error) in
-			if let err = error {
-				print(err.localizedDescription)
-				return
-			}
-			
-			self.performSegue(withIdentifier: "LoginToChat", sender: nil)
-		})
-	}
+		if nameField?.text != "" {
+			FIRAuth.auth()?.signInAnonymously(completion: { (user, error) in
+				if let err = error {
+					print(err.localizedDescription)
+					return
+				}
+				
+				self.performSegue(withIdentifier: "LoginToChat", sender: nil)
+			})
+		}
 	}
 
 	// MARK: - Navigation
