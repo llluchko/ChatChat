@@ -29,14 +29,14 @@ class LoginViewController: UIViewController {
   }
   
   @IBAction func loginDidTouch(_ sender: AnyObject) {
-	if nameField?.text != "" {  // 1
-		FIRAuth.auth()?.signInAnonymously(completion: { (user, error) in  // 2
-			if let err = error { // 3
+	if nameField?.text != "" {
+		FIRAuth.auth()?.signInAnonymously(completion: { (user, error) in
+			if let err = error {
 				print(err.localizedDescription)
 				return
 			}
 			
-			self.performSegue(withIdentifier: "LoginToChat", sender: nil) // 4
+			self.performSegue(withIdentifier: "LoginToChat", sender: nil)
 		})
 	}
   }
