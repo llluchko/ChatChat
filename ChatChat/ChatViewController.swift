@@ -41,6 +41,7 @@ final class ChatViewController: JSQMessagesViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
+		self.inputToolbar.contentView.leftBarButtonItem = nil
 		self.senderId = FIRAuth.auth()?.currentUser?.uid
 		collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
 		collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
