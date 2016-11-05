@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2AF39E3FEABCC02EE9A58124 /* Pods_ChatChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 172A997B717F5594C28CF57E /* Pods_ChatChat.framework */; };
 		459780D31D6465FB007BE66F /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459780D21D6465FB007BE66F /* UIImage+Gif.swift */; };
-		459E535F1D4BF36A00E675A5 /* License in Resources */ = {isa = PBXBuildFile; fileRef = 459E535E1D4BF36A00E675A5 /* License */; };
 		45A0D8FA1D49419500F26729 /* ChannelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A0D8F91D49419500F26729 /* ChannelListViewController.swift */; };
 		45A0D8FE1D49508800F26729 /* CreateChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A0D8FD1D49508800F26729 /* CreateChannelCell.swift */; };
 		45A0D9011D4BB5E900F26729 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A0D9001D4BB5E900F26729 /* Channel.swift */; };
@@ -27,7 +26,6 @@
 		172A997B717F5594C28CF57E /* Pods_ChatChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4570C5E21D54FD11007946D9 /* ChatChat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChatChat.entitlements; sourceTree = "<group>"; };
 		459780D21D6465FB007BE66F /* UIImage+Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
-		459E535E1D4BF36A00E675A5 /* License */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License; sourceTree = "<group>"; };
 		45A0D8F91D49419500F26729 /* ChannelListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelListViewController.swift; sourceTree = "<group>"; };
 		45A0D8FD1D49508800F26729 /* CreateChannelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateChannelCell.swift; sourceTree = "<group>"; };
 		45A0D9001D4BB5E900F26729 /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
@@ -109,12 +107,12 @@
 			isa = PBXGroup;
 			children = (
 				4570C5E21D54FD11007946D9 /* ChatChat.entitlements */,
+				691246D21DCE716D009F7280 /* GoogleService-Info.plist */,
 				45A0D8FF1D4BB5DD00F26729 /* Model */,
 				BB5355901BEF816500321277 /* Controller */,
 				BB5355921BEF818700321277 /* Layout */,
 				BB5355911BEF817A00321277 /* Supporting Files */,
 				BB5355801BEF765800321277 /* Assets.xcassets */,
-				691246D21DCE716D009F7280 /* GoogleService-Info.plist */,
 			);
 			path = ChatChat;
 			sourceTree = "<group>";
@@ -147,7 +145,6 @@
 				45A0D8FD1D49508800F26729 /* CreateChannelCell.swift */,
 				BB53557D1BEF765800321277 /* Main.storyboard */,
 				BB5355821BEF765800321277 /* LaunchScreen.storyboard */,
-				459E535E1D4BF36A00E675A5 /* License */,
 			);
 			name = Layout;
 			sourceTree = "<group>";
@@ -223,7 +220,6 @@
 				BB5355841BEF765800321277 /* LaunchScreen.storyboard in Resources */,
 				45B210371D3B740700DB4827 /* GoogleService-Info.plist in Resources */,
 				BB5355811BEF765800321277 /* Assets.xcassets in Resources */,
-				459E535F1D4BF36A00E675A5 /* License in Resources */,
 				BB53557F1BEF765800321277 /* Main.storyboard in Resources */,
 				691246D31DCE716D009F7280 /* GoogleService-Info.plist in Resources */,
 			);
