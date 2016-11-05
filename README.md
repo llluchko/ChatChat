@@ -11,6 +11,9 @@ An iOS messenger app which use Firebase to synchronize real time data without wr
 
 ## Usage
 
+![alt tag](https://github.com/llluchko/ChatChat/blob/master/ChatChat/Assets.xcassets/2.jpg)
+![alt tag](https://github.com/llluchko/ChatChat/blob/master/ChatChat/Assets.xcassets/1.jpg)
+
   Use both simulator and real device for better testing
 
 ## Contributing
