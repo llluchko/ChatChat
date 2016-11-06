@@ -12,6 +12,29 @@ An iOS messenger app which use Firebase to synchronize real time data without wr
 
 ## Usage
 
+```swift
+private lazy var channelRef: FIRDatabaseReference = FIRDatabase.database().reference().child("channels")
+private var channelRefHandle: FIRDatabaseHandle?
+```
+```swift
+private func observeChannels() {
+  channelRefHandle = channelRef.observe(.childAdded, with: { (snapshot) -> Void in
+    let channelData = snapshot.value as! Dictionary<String, AnyObject>
+    let id = snapshot.key
+    if let name = channelData["name"] as! String!, name.characters.count > 0 {
+      self.channels.append(Channel(id: id, name: name))
+      self.tableView.reloadData()
+    } else {
+      print("Error! Could not decode channel data")
+    }
+  })
+}
+```
+- Use the observe method to listen for new channels being written to the Firebase DB
+- You call observe:with: on your channel reference, storing a handle to the reference. This calls the completion block every time a new channel is added to your database
+- The completion receives a FIRDataSnapshot (stored in snapshot), which contains the data and other helpful methods
+- You pull the data out of the snapshot and, if successful, create a Channel model and add it to your channels array.
+
 ![alt tag](https://github.com/llluchko/ChatChat/blob/master/ChatChat/Assets.xcassets/1.png)
 
 ![alt tag](https://github.com/llluchko/ChatChat/blob/master/ChatChat/Assets.xcassets/2.png)
