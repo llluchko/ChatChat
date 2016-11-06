@@ -13,8 +13,15 @@ class LoginViewController: UIViewController {
   
 	@IBOutlet weak var nameField: UITextField!
 	@IBOutlet weak var bottomLayoutGuideConstraint: NSLayoutConstraint!
-
+	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+	
 	// MARK: - View Lifecycle
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		activityIndicator.hidesWhenStopped = true
+	}
+	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShowNotification(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
@@ -31,10 +38,12 @@ class LoginViewController: UIViewController {
 		if nameField?.text != "" {
 			FIRAuth.auth()?.signInAnonymously(completion: { (user, error) in
 				if let err = error {
+					self.activityIndicator.stopAnimating()
 					print(err.localizedDescription)
 					return
 				}
 				
+				self.activityIndicator.startAnimating()
 				self.performSegue(withIdentifier: "LoginToChat", sender: nil)
 			})
 		}
