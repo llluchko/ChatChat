@@ -14,7 +14,7 @@ class LoginViewController: UIViewController {
 	@IBOutlet weak var nameField: UITextField!
 	@IBOutlet weak var bottomLayoutGuideConstraint: NSLayoutConstraint!
 
-	// MARK: View Lifecycle
+	// MARK: - View Lifecycle
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShowNotification(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)

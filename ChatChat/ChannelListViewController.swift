@@ -30,7 +30,7 @@ class ChannelListViewController: UITableViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		title = "YES!"
+		title = "Channels 🤖"
 		observeChannels()
 	}
 	
@@ -41,7 +41,7 @@ class ChannelListViewController: UITableViewController {
 		}
 	}
 	
-	// MARK :Actions
+	// MARK: - Actions
 	@IBAction func createChannel(_ sender: AnyObject) {
 		if let name = newChannelTextField?.text {
 			let newChannelRef = channelRef.childByAutoId()
@@ -52,7 +52,7 @@ class ChannelListViewController: UITableViewController {
 		}
 	}
 	
-	// MARK: Firebase related methods
+	// MARK: - Firebase related methods
 	private func observeChannels() {
 		// We can use the observe method to listen for new
 		// channels being written to the Firebase DB
@@ -68,7 +68,7 @@ class ChannelListViewController: UITableViewController {
 		})
 	}
 	
-	// MARK: Navigation
+	// MARK: - Navigation
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		super.prepare(for: segue, sender: sender)
 		
@@ -81,7 +81,7 @@ class ChannelListViewController: UITableViewController {
 		}
 	}
 	
-	// MARK: UITableViewDataSource
+	// MARK: - UITableViewDataSource
 	override func numberOfSections(in tableView: UITableView) -> Int {
 		return 2
 	}
@@ -114,7 +114,7 @@ class ChannelListViewController: UITableViewController {
 		return cell
 	}
 	
-	// MARK: UITableViewDelegate
+	// MARK: - UITableViewDelegate
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		if (indexPath as NSIndexPath).section == Section.currentChannelSection.rawValue {
 			let channel = channels[(indexPath as NSIndexPath).row]

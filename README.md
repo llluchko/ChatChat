@@ -7,7 +7,7 @@ An iOS messenger app which use Firebase to synchronize real time data without wr
 - pod install
 - Signup in Firebase and follow the instructions to add Firebase to an iOS app
 - Copy the GoogleService-Info.plist config file to your project
-- Set up anonymous authentication: open the Firebase App Dashboard, select the Auth option on the left, click Sign-In   Method, then select the Anonymous option, switch Enable so that it’s on, then click Save.
+- Set up anonymous authentication: open the Firebase App Dashboard, select the Auth option on the left, click Sign-In   Method, then select the Anonymous option, switch Enable so that it’s on, then click Save
 - Enjoy
 
 ## Usage

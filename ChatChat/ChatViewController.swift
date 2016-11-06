@@ -12,7 +12,7 @@ import JSQMessagesViewController
 
 final class ChatViewController: JSQMessagesViewController {
   
-    // MARK: Properties
+    // MARK: - Properties
 	var channelRef: FIRDatabaseReference?
 	var channel: Channel? {
 		didSet {
@@ -37,12 +37,12 @@ final class ChatViewController: JSQMessagesViewController {
 	}
 	private lazy var usersTypingQuery: FIRDatabaseQuery = self.channelRef!.child("typingIndicator").queryOrderedByValue().queryEqual(toValue: true)
 	
-    // MARK: View Lifecycle
+    // MARK: - View Lifecycle
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		self.inputToolbar.contentView.leftBarButtonItem = nil
 		self.senderId = FIRAuth.auth()?.currentUser?.uid
+		inputToolbar.contentView.leftBarButtonItem = nil // TO-DO: Enable it to attach images
 		collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
 		collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
 		observeMessages()
@@ -53,7 +53,7 @@ final class ChatViewController: JSQMessagesViewController {
 		observeTyping()
 	}
 	
-    // MARK: Collection view data source (and related) methods
+    // MARK: - Collection view data source (and related) methods
 	override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageDataForItemAt indexPath: IndexPath!) -> JSQMessageData! {
 		return messages[indexPath.item]
 	}
@@ -87,7 +87,7 @@ final class ChatViewController: JSQMessagesViewController {
 		return cell
 	}
   
-	// MARK: Firebase related methods
+	// MARK: - Firebase related methods
 	override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
 		let itemRef = messageRef.childByAutoId()
 		let messageItem = [
@@ -138,7 +138,7 @@ final class ChatViewController: JSQMessagesViewController {
 		}
 	}
 
-	// MARK: UI and User Interaction
+	// MARK: - UI and User Interaction
 	private func setupOutgoingBubble() -> JSQMessagesBubbleImage {
 		let bubbleImageFactory = JSQMessagesBubbleImageFactory()
 		return bubbleImageFactory!.outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleGreen())
@@ -156,7 +156,7 @@ final class ChatViewController: JSQMessagesViewController {
 		}
 	}
 
-	// MARK: UITextViewDelegate methods
+	// MARK: - UITextViewDelegate methods
 	override func textViewDidChange(_ textView: UITextView) {
 		super.textViewDidChange(textView)
 		// If the text is not empty, the user is typing
